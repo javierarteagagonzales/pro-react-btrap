@@ -8,7 +8,11 @@ const [contador, setContador] = useState(valorInicial)
         setContador(contador + valor)
     }
 
-    const decrementar = (valor = 1) => {
+    const decrementar = (valor = 1,negativo) => {
+        if(!negativo && contador - valor <0) {
+            setContador(0)
+            return
+        }
         setContador(contador - valor)
     }
 
